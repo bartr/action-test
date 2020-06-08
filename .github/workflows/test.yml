@@ -33,8 +33,10 @@ jobs:
         echo $USER
         echo $REPO
 
-        if [ $PAT != ''];
+        if [ -z $PAT ];
         then
           echo "true"
+        else
+          echo "false"
         fi
 
