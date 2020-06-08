@@ -29,10 +29,7 @@ jobs:
         USER=${{ secrets.DOCKER_USER }}
         REPO=${{ secrets.DOCKER_REPO }}
 
-        if [ -n $PAT ];
-        then
-          echo "PAT set"
-        fi
-
-        [ -n $PAT ] && echo "PAT set 2"
+        [ -n $REPO ] && echo "REPO set"
+        [ -n $USER ] && echo "USER set"
+        [ -n $PAT ] && echo "PAT set"
 
