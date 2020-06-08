@@ -5,11 +5,12 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
 
     - name: Check secrets
-      id: secrets_set
+      id: secrets
       uses: bartr/action-test@v1
       with:
         secrets: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
