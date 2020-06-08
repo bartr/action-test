@@ -1,13 +1,13 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Check all secrets are set'
+description: 'Check that all secrets are set'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  secrets:
+    description: 'List of secrets to check'
     required: true
-    default: '1000'
+    default: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
 outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  isSet:
+    description: 'true if all of the secrets are set'
 runs:
   using: 'node12'
   main: 'dist/index.js'
