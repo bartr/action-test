@@ -17,6 +17,6 @@ jobs:
 
     - name: Check the output
       run: |
-        # echo "isSet - ${{ steps.secrets.outputs.secretsAreSet }} "
+        echo "secretsAreSet - ${{ steps.secrets.outputs.secretsAreSet }} "
         echo $SECRETS_ARE_SET
         echo ${{ env.SECRETS_ARE_SET }}
