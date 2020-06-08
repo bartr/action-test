@@ -8,9 +8,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: bartr/action-test@v1
-      name: Check secrets
+    - name: Check secrets
       id: secrets_set
+      uses: bartr/action-test@v1
       with:
         secrets: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
 
