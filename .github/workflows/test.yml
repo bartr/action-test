@@ -33,6 +33,8 @@ jobs:
         echo $USER
         echo $REPO
 
-        [ -n ${{ secrets.DOCKER_PAT }} ] echo $PAT || echo "PAT"
-        [ -n $USER ] echo $USER || echo "USER"
-        [ -n $REPO ] echo $REPO || echo "REPO"
+        if [ $PAT != ''];
+        then
+          echo $PAT
+        fi
+
