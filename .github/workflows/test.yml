@@ -33,6 +33,6 @@ jobs:
         echo $USER
         echo $REPO
 
-        echo $PAT == ''
-        echo $USER == ''
-        echo $REPO == ''
+        echo "$PAT == ''"
+        echo "$USER == ''"
+        echo "$REPO == ''"
