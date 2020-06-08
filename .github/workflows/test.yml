@@ -24,3 +24,15 @@ jobs:
         echo $DOCKER_SET
         echo ${{ env.DOCKER_SET }}
         echo $pat
+
+        PAT=${{ secrets.DOCKER_PAT }}
+        USER=${{ secrets.DOCKER_USER }}
+        REPO=${{ secrets.DOCKER_REPO }}
+
+        echo $PAT
+        echo $USER
+        echo $REPO
+
+        echo $PAT == ''
+        echo $USER == ''
+        echo $REPO == ''
