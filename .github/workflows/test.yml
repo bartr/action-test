@@ -20,7 +20,7 @@ jobs:
           echo "Set"
         fi
 
-        if [ ${{ secrets.DOCKER_PAT }} != "" ];
+        if [ ${{ secrets.DOCKER_PAT }} .ne "" ];
         then
           echo "secret set"
         fi
@@ -32,4 +32,3 @@ jobs:
         echo $DOCKER_REPO
         echo "Done"
 
-        
