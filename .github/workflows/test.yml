@@ -11,7 +11,7 @@ jobs:
 
     - name: Check the output
       run: |
-        if [ "${{ secrets.DOCKER_PAT }}" != "" && "${{ secrets.DOCKER_REPO }}" != "" && "${{ secrets.DOCKER_USER}}" != "" ];
+        if [[ "${{ secrets.DOCKER_PAT }}" != "" && "${{ secrets.DOCKER_REPO }}" != "" && "${{ secrets.DOCKER_USER}}" != "" ]];
         then
           echo "secret set"
         fi
