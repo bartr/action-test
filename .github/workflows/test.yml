@@ -29,7 +29,7 @@ jobs:
         USER=${{ secrets.DOCKER_USER }}
         REPO=${{ secrets.DOCKER_REPO }}
 
-        [ -n $REPO ] && echo "REPO set"
-        [ -n $USER ] && echo "USER set"
-        [ -n $PAT ] && echo "PAT set"
+        [ -z $REPO ] && echo "REPO set"
+        [ -z $USER ] && echo "USER set"
+        [ -z $PAT ] && echo "PAT set"
 
