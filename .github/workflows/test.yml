@@ -16,4 +16,4 @@ jobs:
         secrets: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
 
     - name: Check the output
-      run: echo "isSet - ${{ steps.secrets.output.isSet }} "
+      run: echo "isSet - ${{ steps.secrets.output }} "
