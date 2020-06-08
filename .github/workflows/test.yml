@@ -23,7 +23,7 @@ jobs:
       run: |
         echo $DOCKER_SET
 
-        if [ $DOCKER_SET ];
+        if [ $DOCKER_SET == true ];
         then
           echo "Docker Set"
         fi
