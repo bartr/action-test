@@ -15,5 +15,3 @@ jobs:
       with:
         secrets: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
 
-    - name: Check the output
-      run: echo "isSet: "
