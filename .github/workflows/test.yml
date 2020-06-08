@@ -16,7 +16,7 @@ jobs:
         if [[ "${{ secrets.DOCKER_PAT }}" != "" && "${{ secrets.DOCKER_REPO }}" != "" && "${{ secrets.DOCKER_USER}}" != "" ]];
         then
           echo "secret set"
-          echo "::set-env name=DOCKER_SET::${{ true }}"
+          echo "::set-env name=DOCKER_SET::true"
         fi
 
     - name: test DOCKER_SET
