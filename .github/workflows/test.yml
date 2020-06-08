@@ -20,7 +20,7 @@ jobs:
           echo "Set"
         fi
 
-        if [ ${{ secrets.DOCKER_PAT != "" }}];
+        if [ ${{ secrets.DOCKER_PAT }} != "" ];
         then
           echo "secret set"
         fi
