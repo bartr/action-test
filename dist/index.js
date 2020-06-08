@@ -54,16 +54,19 @@ module.exports = require("os");
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
 const core = __webpack_require__(470);
-// const github = require('@actions/github');
 
 async function run() {
   try { 
     const ms = core.getInput('secrets');
     const envVar = core.getInput('env_var')
 
-    core.exportVariable(envVar, true);
+    const pat = core.getInput("pat");
 
-    core.setOutput('secretsAreSet', true);
+    core.exportVariable('pat', pat);
+    
+    core.exportVariable(envVar, pat != null);
+
+    core.setOutput('secretsAreSet', pat != null);
   } 
   catch (error) {
     core.setFailed(error.message);

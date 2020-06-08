@@ -14,9 +14,13 @@ jobs:
       uses: bartr/action-test@v1
       with:
         secrets: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
+        repo: ${{ secrets.DOCKER_REPO }}
+        user: ${{ secrets.DOCKER_USER }}
+        pat: ${{ secrets.DOCKER_PAT }}
 
     - name: Check the output
       run: |
         echo "secretsAreSet - ${{ steps.secrets.outputs.secretsAreSet }} "
         echo $SECRETS_ARE_SET
         echo ${{ env.SECRETS_ARE_SET }}
+        echo $pat
