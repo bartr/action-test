@@ -33,7 +33,7 @@ jobs:
         echo $USER
         echo $REPO
 
-        if [ -z $PAT ];
+        if [ -n $PAT ];
         then
           echo "true"
         else
