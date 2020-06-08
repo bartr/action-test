@@ -9,34 +9,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Check secrets
-      id: secrets
-      uses: bartr/action-test@v1
-      with:
-        secrets: 'repo user pat'
-        env_var: 'DOCKER_SET'
-        repo: ${{ secrets.DOCKER_REPO }}
-        user: ${{ secrets.DOCKER_USER }}
-        pat: ${{ secrets.DOCKER_PAT }}
-
     - name: Check the output
       run: |
-        echo $DOCKER_SET
-        echo ${{ env.DOCKER_SET }}
-        echo $pat
+        DOCKER_PAT=${{ secrets.DOCKER_PAT }}
+        DOCKER_USER=${{ secrets.DOCKER_USER }}
+        DOCKER_REPO=${{ secrets.DOCKER_REPO }}
 
-        PAT=${{ secrets.DOCKER_PAT }}
-        USER=${{ secrets.DOCKER_USER }}
-        REPO=${{ secrets.DOCKER_REPO }}
-
-        if [[ ! -z $REPO && ! -z $USER && ! -z $PAT ]];
+        if [[ ! -z $DOCKER_REPO && ! -z $DOCKER_USER && ! -z $DOCKER_PAT ]];
         then
           echo "Set"
         fi
 
     - name: test
       run: |
-        echo $PAT
-        echo $USER
-        echo $REPO
+        echo $DOCKER_PAT
+        echo $DOCKER_USER
+        echo $DOCKER_REPO
         echo "Done"
