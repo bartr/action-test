@@ -29,7 +29,10 @@ jobs:
         USER=${{ secrets.DOCKER_USER }}
         REPO=${{ secrets.DOCKER_REPO }}
 
-        [ -z $REPO ] && echo "REPO set"
-        [ -z $USER ] && echo "USER set"
-        [ -z $PAT ] && echo "PAT set"
+        if [[ -z $REPO || -z $USER || -z $PAT ]];
+        then
+          echo "Not set"
+        else
+          echo "Set"
+        fi
 
