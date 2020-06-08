@@ -59,11 +59,11 @@ const core = __webpack_require__(470);
 async function run() {
   try { 
     const ms = core.getInput('secrets');
-    console.log(`secrets: ${ms}`)
+    const envVar = core.getInput('env_var')
 
-    core.exportVariable("IS_SET", true);
+    core.exportVariable(envVar, true);
 
-    core.setOutput('isSet', true);
+    core.setOutput('secretsAreSet', true);
   } 
   catch (error) {
     core.setFailed(error.message);

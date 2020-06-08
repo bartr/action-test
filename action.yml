@@ -5,8 +5,12 @@ inputs:
     description: 'List of secrets to check'
     required: true
     default: 'DOCKER_REPO DOCKER_USER DOCKER_PAT'
+  env_var:
+    description: 'Environment Variable to store the result'
+    required: true
+    default: "SECRETS_ARE_SET"
 outputs:
-  isSet:
+  secretsAreSet:
     description: 'true if all of the secrets are set'
 runs:
   using: 'node12'
