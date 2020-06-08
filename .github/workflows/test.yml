@@ -35,6 +35,6 @@ jobs:
 
         if [ $PAT != ''];
         then
-          echo $PAT
+          echo "true"
         fi
 
