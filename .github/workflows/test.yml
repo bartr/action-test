@@ -33,6 +33,6 @@ jobs:
         echo $USER
         echo $REPO
 
-        [$PAT] echo $PAT || echo "PAT"
-        [$USER] echo $USER || echo "USER"
-        [$REPO] echo $REPO || echo "REPO"
+        [ -z $PAT ] echo $PAT || echo "PAT"
+        [ -z $USER ] echo $USER || echo "USER"
+        [ -z $REPO ] echo $REPO || echo "REPO"
