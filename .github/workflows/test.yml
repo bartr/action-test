@@ -11,24 +11,7 @@ jobs:
 
     - name: Check the output
       run: |
-        DOCKER_PAT=${{ secrets.DOCKER_PAT }}
-        DOCKER_USER=${{ secrets.DOCKER_USER }}
-        DOCKER_REPO=${{ secrets.DOCKER_REPO }}
-
-        if [[ ! -z $DOCKER_REPO && ! -z $DOCKER_USER && ! -z $DOCKER_PAT ]];
-        then
-          echo "Set"
-        fi
-
-        if [ "${{ secrets.DOCKER_PAT }}" != "" ];
+        if [ "${{ secrets.DOCKER_PAT }}" != "" && "${{ secrets.DOCKER_REPO }}" != "" && "${{ secret.DOCKER_USER}}" != "" ];
         then
           echo "secret set"
         fi
-
-    - name: test
-      run: |
-        echo $DOCKER_PAT
-        echo $DOCKER_USER
-        echo $DOCKER_REPO
-        echo "Done"
-
